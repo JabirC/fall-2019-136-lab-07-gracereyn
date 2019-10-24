@@ -26,3 +26,32 @@ string removeLeadingSpaces(string line) {
 	}
 	return result;
 }
+
+//Task B: Figures out the correct number of tabs and adds them to each line
+int countChar(string line, char c) {
+	int count = 0;
+	for(char a : line) {
+		if(a == c) {
+			count++;
+		}
+	}
+	return count;
+}
+
+string indent(string line) {
+	string result, temp;
+	int open = 0;
+	for(char c : line) {
+		temp += c;
+		if(c == '\n') {
+			open -= countChar(temp, '}');
+			for(int i = 0; i < open; i++) {
+				result += '\t';
+			}
+			open += countChar(temp, '{');
+			result += temp;
+			temp = "";
+		}
+	}
+	return result;
+}

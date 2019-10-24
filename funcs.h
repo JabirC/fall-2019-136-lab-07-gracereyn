@@ -10,3 +10,5 @@
 using std::string;
 
 string removeLeadingSpaces(string);
+int countChar(string, char);
+string indent(string);

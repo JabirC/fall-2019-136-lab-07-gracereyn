@@ -16,3 +16,7 @@ TEST_CASE("Remove Leading Spaces") {
 	CHECK(removeLeadingSpaces("\t Hello") == "Hello");
 	CHECK(removeLeadingSpaces("\t Hello \n I am Grace") == "Hello \nI am Grace");
 }
+
+TEST_CASE("Indent") {
+	CHECK(indent("int main() {\ncode stuff here\nloop here {\nstuff in loop\n}\n}\n") == "int main() {\n\tcode 			      stuff here\n\tloop here {\n\t\tstuff in loop\n\t}\n}\n");
+}
