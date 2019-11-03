@@ -12,7 +12,9 @@ using std::cin;
 using std::cout;
 
 int main() {
-	string wrongtabs;
-	cin >> wrongtabs;
+	string wrongtabs = "int main() {\ncode stuff here\nloop here {\nstuff in loop\n}\n}\n";
+	cout << "####### TESTING removeLeadingSpaces() #######" << '\n';
 	cout << removeLeadingSpaces(wrongtabs) << '\n';
+	cout << "####### TESTING indent() #######" << '\n';
+	cout << indent(wrongtabs) << '\n';
 }
